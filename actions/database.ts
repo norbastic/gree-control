@@ -1,11 +1,12 @@
 "use server";
 
-export const connectDb = () => {
-    const dbHost = process.env.DB_HOST;
-    const dbUser = process.env.DB_USER;
-    const dbPassword = process.env.DB_PASSWORD;
+import sequelize from "@/models/sequelizeInstance";
 
-    if (!dbHost || !dbUser || !dbPassword) {
-        throw Error("Database [HOST] and/or [USER] and/or [PASSWORD] is/are empty.");
+export const connectDb = async () => {
+    try {
+        await sequelize.authenticate();
+        console.log('Connection has been established successfully.');
+    } catch (error) {
+        console.error('Unable to connect to the database:', error);
     }
-}
+};
