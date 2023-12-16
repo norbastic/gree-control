@@ -1,6 +1,6 @@
 import { Model, DataTypes } from "sequelize";
-import sequelize from "./sequelizeInstance";
-import Device from "./device";
+import sequelize from "./SequelizeInstance";
+import Device from "./Device";
 
 class DeviceSettings extends Model {
   public setting_id!: number;

@@ -1,7 +1,7 @@
 import { Model, DataTypes } from "sequelize";
-import sequelize from "./sequelizeInstance";
+import sequelize from "./SequelizeInstance";
 
-class Device extends Model {
+export class Device extends Model {
   public device_id!: string; // UUID
   public name!: string;
   public type!: string;

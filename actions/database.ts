@@ -1,6 +1,6 @@
 "use server";
 
-import sequelize from "@/models/sequelizeInstance";
+import sequelize from "@/models/SequelizeInstance";
 
 export const connectDb = async () => {
     try {
