@@ -1,10 +1,9 @@
-import Image from 'next/image'
-import { Header } from './header'
-import { useTransition } from 'react'
-import { connectDb } from '@/actions/database';
+import { connectDb, migrateDataBase } from "@/actions/database";
  
 export default function Home() {
   connectDb();
+  migrateDataBase();
+
   return (
     <main>
     </main>
