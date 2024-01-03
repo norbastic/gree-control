@@ -9,9 +9,8 @@ const ScanPage = async () => {
             {
                 devices ?
                 <ScannedList devices={devices} /> :
-                <h1>Loading</h1>
-            }
-     
+                <h1>Loading...</h1>
+            }     
         </main>
     );
 }

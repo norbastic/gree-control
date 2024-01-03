@@ -1,5 +1,6 @@
 import { Model, DataTypes } from "sequelize";
 import sequelize from "./SequelizeInstance";
+import { DeviceInfo } from "gree-lib";
 
 export class Device extends Model {
   public device_id!: string; // UUID
@@ -7,6 +8,15 @@ export class Device extends Model {
   public type!: string;
   public firmware_version!: string;
   public encryption_key!: string;
+}
+
+function mapDeviceInfoToDevice(deviceInfo: DeviceInfo): Device {
+  return { 
+    device_id: deviceInfo.cid,
+    name: deviceInfo.name,
+    type: deviceInfo.model,
+    firmware_version: deviceInfo.ver
+    } as Device
 }
 
 Device.init({

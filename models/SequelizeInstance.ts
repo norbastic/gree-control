@@ -7,7 +7,7 @@ const dbPassword = process.env.DB_PASSWORD;
 const dbName = process.env.DB_NAME;
 
 if (!dbHost || !dbUser || !dbPassword || !dbName) {
-    throw new Error("Database [HOST], [USER], [PASSWORD], and/or [NAME] environment variables are not set.");
+    throw new Error("Database [DB_HOST], [DB_USER], [DB_PASSWORD], and/or [DB_NAME] environment variables are not set.");
 }
 
 const sequelize = new Sequelize(`postgres://${dbUser}:${dbPassword}@${dbHost}:5432/${dbName}`, {dialectModule: pg});
