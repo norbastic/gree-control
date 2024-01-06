@@ -1,6 +1,8 @@
 "use server";
 
+import Device from "@/models/Device";
 import sequelize from "@/models/SequelizeInstance";
+import { BindResponse } from "gree-lib";
 
 export const connectDb = async () => {
     try {
@@ -18,4 +20,8 @@ export const migrateDataBase = async () => {
       } catch (error) {
         console.error("An error occurred while synchronizing models: ", error);
     }
+}
+
+export const addDeviceToDB = async () => {
+    return true;
 }
