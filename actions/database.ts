@@ -22,6 +22,6 @@ export const migrateDataBase = async () => {
     }
 }
 
-export const addDeviceToDB = async () => {
+export const addDeviceToDB = async () : Promise<boolean> => {
     return true;
 }
